@@ -2526,7 +2526,10 @@ H.actions = {
     H.picker_query_delete(picker, n_del)
   end,
 
-  mark     = function(picker, _) H.picker_mark_indexes(picker, 'current') end,
+  mark     = function(picker, _)
+    H.picker_mark_indexes(picker, 'current')
+    H.picker_move_current(picker, 1)
+  end,
   mark_all = function(picker, _) H.picker_mark_indexes(picker, 'all') end,
 
   move_down  = function(picker, _) H.picker_move_current(picker, 1)  end,
